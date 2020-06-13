@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="videoUri"
+            type="android.net.Uri" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/player_view"
+            app:video_uri="@{videoUri}"
+            app:resize_mode="zoom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:id="@+id/likesLinLayoutDetails"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/bookmark"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bookmark_icon"
+                android:button="@null"
+                android:checked="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="12dp"
+                android:stateListAnimator="@animator/scale" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
